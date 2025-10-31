@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: 'Creepster', cursive;
+  background: linear-gradient(135deg, #1a1a1a, #3d0000);
+  color: #ffcccc;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 10vh;
+}
+
+/* Flickering candle glow animation */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 2px 2px 5px black, 0 0 10px #ff4c4c;
+    color: #ff4c4c;
+  }
+  20%, 22%, 24%, 55% {
+    text-shadow: 2px 2px 8px black, 0 0 20px #ff9999;
+    color: #ff9999;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ff4c4c;
+  text-shadow: 2px 2px 5px black;
+  animation: flicker 1.5s infinite;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #ff9999;
+  animation: flicker 2s infinite alternate;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 25px;
+  font-size: 1.5rem;
+  border: 2px solid #ff4c4c;
+  background-color: #330000;
+  color: #ffcccc;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: #550000;
+  color: #ff6666;
+}
+
+.hidden {
+  display: none;
+}
+
+#surprise img {
+  width: 300px;
+  max-width: 80%;
+  cursor: pointer;
+  border: 3px solid #ff4c4c;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+#surprise img:hover {
+  transform: scale(1.05);
+}
+
+#surprise p {
+  font-size: 1.5rem;
+  color: #ff4c4c;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+  #surprise img {
+    width: 200px;
+  }
+}
